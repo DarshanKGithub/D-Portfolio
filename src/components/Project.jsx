@@ -1,5 +1,6 @@
 import React from "react";
-import image1 from "../assets/E-localhood.png"
+import image1 from "../assets/E-localhood.png";
+import image2 from "../assets/Portfolio.png"
 
 // Example project data array
 const projects = [
@@ -11,6 +12,15 @@ const projects = [
     technology: "Technology: React, JavaScript, HTML, CSS, Axios, Figma",
     image: image1,
     github:"https://github.com/DarshanKGithub/E-Localhood---Customer-Module"
+  },
+  {
+    id: 2,
+    title: "D-Portfolio",
+    description:
+      "A portfolio is a compilation of academic and professional materials that exemplifies your beliefs, skills, qualifications, education, training, and experiences. It provides insight into your personality and work ethic.",
+    technology: "Technology: Reactjs, Vite.js, TailwindCss, JavaScript, HTML, CSS,",
+    image: image2,
+    github:"https://github.com/DarshanKGithub/D-Portfolio"
   },
   
   
@@ -39,7 +49,8 @@ function Project() {
               <h2 className="text-2xl font-bold">{project.title}</h2>
               <p className="mt-4">{project.description}</p>
               <p className="mt-2">{project.technology }</p>
-              <a className="text-blue-800/75 underline" href="https://github.com/DarshanKGithub/E-Localhood---Customer-Module">https://github.com/DarshanKGithub/E-Localhood---Customer-Module</a>
+              <a className="text-blue-800/75 underline">{project.github}</a>
+             
             </div>
           </div>
         ))}

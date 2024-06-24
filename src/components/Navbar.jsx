@@ -1,18 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar({ scrollToContact }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false); 
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleClick = () => {
+    navigate("/");
+  }
+
+  
+
   return (
     <div className="text-white">
       <div className="bg-black p-5 flex justify-center items-center">
-        <div className="text-lg font-bold flex ">DKODER</div>
+        <Link className="text-lg font-bold flex " onClick={handleClick}>DKODER</Link>
         <div className="md:hidden absolute flexbox left-3">
           <button
             onClick={toggleMenu}
@@ -40,13 +46,7 @@ function Navbar({ scrollToContact }) {
           >
             About
           </Link>
-          <Link
-            className="hover:text-red-900 p-2 md:p-0 md:ml-4"
-            to="/service"
-            onClick={() => setIsOpen(false)}
-          >
-            Service
-          </Link>
+        
           <Link
             className="hover:text-red-900 p-2 md:p-0 md:ml-4"
             to="/projects"
@@ -61,7 +61,7 @@ function Navbar({ scrollToContact }) {
           >
             Resume
           </Link>
-          <span
+          <span href="/contacts"
             className="hover:text-red-900 p-2 md:p-0 md:ml-4 cursor-pointer"
             onClick={() => {
               scrollToContact();

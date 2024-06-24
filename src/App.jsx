@@ -5,8 +5,9 @@ import SocialMedia from "./components/SocialMedia";
 import Heading from "./components/Heading";
 import Contact from "./components/Contact";
 import Project from "./components/Project";
+import About from "./components/About";
+import Resume from "./components/Resume";
 import "./App.css";
-
 
 function App() {
   const contactRef = useRef(null);
@@ -31,7 +32,9 @@ function App() {
             </div>
           }
         />
-        <Route path="/projects" element={<Project/>} />
+        <Route path="/projects" element={<Project />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/resume" component={<Resume/>} />
       </Routes>
     </div>
   );
