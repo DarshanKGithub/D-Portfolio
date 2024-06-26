@@ -1,6 +1,6 @@
 import React from "react";
 import image1 from "../assets/E-localhood.png";
-import image2 from "../assets/Portfolio.png"
+import image2 from "../assets/Portfolio.png";
 
 // Example project data array
 const projects = [
@@ -11,7 +11,7 @@ const projects = [
       "E-Localhood is the e-commerce website containing Customer, Seller & Service Provider. The main motive of working on this is to give small business a platform to grow there business. The Main motive of this is to help small business and local shops to grow their RR (Reach and Revenue) with the help of this website.",
     technology: "Technology: React, JavaScript, HTML, CSS, Axios, Figma",
     image: image1,
-    github:"https://github.com/DarshanKGithub/E-Localhood---Customer-Module"
+    github: "https://github.com/DarshanKGithub/E-Localhood---Customer-Module",
   },
   {
     id: 2,
@@ -20,9 +20,8 @@ const projects = [
       "A portfolio is a compilation of academic and professional materials that exemplifies your beliefs, skills, qualifications, education, training, and experiences. It provides insight into your personality and work ethic.",
     technology: "Technology: Reactjs, Vite.js, TailwindCss, JavaScript, HTML, CSS,",
     image: image2,
-    github:"https://github.com/DarshanKGithub/D-Portfolio"
+    github: "https://github.com/DarshanKGithub/D-Portfolio",
   },
-  
   
   // Add more projects as needed
 ];
@@ -43,14 +42,21 @@ function Project() {
           >
             <img
               src={project.image}
+              alt={project.title}
               className="w-full md:w-4/6 h-auto rounded-lg"
             />
             <div className="text-white mt-5 md:mt-0">
               <h2 className="text-2xl font-bold">{project.title}</h2>
               <p className="mt-4">{project.description}</p>
-              <p className="mt-2">{project.technology }</p>
-              <a className="text-blue-800/75 underline">{project.github}</a>
-             
+              <p className="mt-2">{project.technology}</p>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-800/75 underline hover:text-blue-400"
+              >
+               <p>{project.github}</p>
+              </a>
             </div>
           </div>
         ))}
