@@ -14,7 +14,7 @@ function Heading() {
         </p>
       </div>
       <div className="absolute left-5 md:left-10 w-11/12 md:w-3/4 lg:w-1/2 text-white text-xs md:text-sm lg:text-base text-start">
-        <p className="relative font-semibold mt-24 md:mt-16 lg:mt-24 hover:text-emerald-600">
+        <p className="relative font-semibold -mt-28 md:mt-28 lg:mt-28 hover:text-emerald-600">
           Aspiring web developer with a strong foundation in front-end
           technologies, seeking
           <br className="hidden md:block" /> to leverage my skills in HTML, CSS,
@@ -25,11 +25,11 @@ function Heading() {
           solutions.
         </p>
       </div>
-      <div className="absolute bottom-2 md:top-1/2 md:right-10 transform md:-translate-y-1/2 drop-shadow-2xl">
+      <div className="absolute h-72 bottom-48 md:top-1/2 md:right-10 transform md:-translate-y-1/2 drop-shadow-2xl">
         <img
           src={image}
-          alt="Darshan KShetri"
-          className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-full"
+          alt="Darshan Kshetri"
+          className="w-48 h-48 sm:w-56 sm:h-56 md:w-52 md:h-56 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-full"
         />
       </div>
     </div>

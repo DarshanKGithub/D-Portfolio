@@ -1,12 +1,12 @@
 import React from "react";
-import { FaInstagram } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
 function SocialMedia() {
   return (
-    <div className=" flex mx-8 justify-end mt-[-36px] space-x-5  text-white ">
+    <div className="text-white mx-8 mt-[-36px] flex justify-center md:justify-end l:justify-center space-x-5">
       <a
         className="hover:text-red-900"
         href="https://www.instagram.com/?utm_source=pwa_homescreen&__pwa=1"

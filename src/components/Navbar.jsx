@@ -1,83 +1,130 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar({ scrollToContact }) {
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false); // State to manage menu visibility
+
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!isOpen); // Toggle menu visibility
   };
 
-  const handleClick = () => {
-    navigate("/");
+  const handleNavLinkClick = () => {
+    setIsOpen(false); // Close menu when clicking on a navigation link
   };
 
   return (
-    <div className="text-white">
-      <div className="bg-black p-5 flex justify-center items-center">
-        <Link
-          className="text-lg font-bold flex relative left-"
-          onClick={handleClick}
-        >
+    <div className="bg-black p-4 flex justify-between lg:justify-center lg:gap-4 items-center text-white">
+      <div className="flex items-center">
+        <Link className="text-lg font-bold" to="/">
           DKODER
         </Link>
-        <div className="md:hidden absolute flexbox left-3">
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none"
-          >
-            {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-          </button>
-        </div>
-        <div
-          className={`flex-col md:flex md:flex-row md:items-center relative md:static right-11 top-111 md:bg-transparent w-full md:w-auto transition-all duration-300 ease-in-out ${
-            isOpen ? "top-16 opacity-100" : "top-[-490px] opacity-0"
-          } md:opacity-100`}
+      </div>
+      
+      {/* Hamburger menu for mobile */}
+      <div className="md:hidden">
+        <button
+          className="text-white"
+          onClick={toggleMenu}
         >
-          <Link
-            className="hover:text-red-900 p-2 md:p-0 md:ml-4"
-            to="/"
-            onClick={() => setIsOpen(false)}
+          <svg
+            className="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            Home
-          </Link>
-          <Link
-            className="hover:text-red-900 p-2 md:p-0 md:ml-4"
-            to="/about"
-            onClick={() => setIsOpen(false)}
-          >
-            About
-          </Link>
-
-          <Link
-            className="hover:text-red-900 p-2 md:p-0 md:ml-4"
-            to="/projects"
-            onClick={() => setIsOpen(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            className="hover:text-red-900 p-2 md:p-0 md:ml-4"
-            to="/resume"
-            onClick={() => setIsOpen(false)}
-          >
-            Resume
-          </Link>
-          <span
-            href="/contacts"
-            className="hover:text-red-900 p-2 md:p-0 md:ml-4 cursor-pointer"
-            onClick={() => {
-              scrollToContact();
-              setIsOpen(false);
-            }}
-          >
-            Contact
-          </span>
-        </div>
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            )}
+          </svg>
+        </button>
+        
+        {/* Dropdown menu for mobile */}
+        {isOpen && (
+          <div className="absolute right-0 top-14 w-48 bg-black rounded-lg shadow-lg py-2">
+            <MobileNavLink href="/" text="Home" handleClick={() => setIsOpen(false)} />
+            <MobileNavLink href="/about" text="About" handleClick={() => setIsOpen(false)} />
+            <MobileNavLink href="/projects" text="Projects" handleClick={() => setIsOpen(false)} />
+            <MobileNavLink href="/resume" text="Resume" handleClick={() => setIsOpen(false)} />
+            <span
+              className="block px-4 py-2 text-sm text-white cursor-pointer hover:text-red-900"
+              onClick={() => {
+                scrollToContact();
+                setIsOpen(false);
+              }}
+            >
+              Contact
+            </span>
+          </div>
+        )}
+      </div>
+      
+      {/* Desktop navigation */}
+      <div className="hidden md:flex space-x-4">
+        <NavLink href="/" text="Home" handleClick={handleNavLinkClick} />
+        <NavLink href="/about" text="About" handleClick={handleNavLinkClick} />
+        <NavLink href="/projects" text="Projects" handleClick={handleNavLinkClick} />
+        <NavLink href="/resume" text="Resume" handleClick={handleNavLinkClick} />
+        <span
+          className="hover:text-red-900 cursor-pointer"
+          onClick={scrollToContact}
+        >
+          Contact
+        </span>
       </div>
     </div>
   );
 }
+
+const NavLink = ({ href, text, handleClick }) => {
+  const navigate = useNavigate();
+
+  const handleNavLinkClick = (event) => {
+    event.preventDefault();
+    navigate(href);
+    handleClick(); // Close menu
+  };
+
+  return (
+    <a
+      href={href}
+      className="hover:text-red-900 cursor-pointer"
+      onClick={handleNavLinkClick}
+    >
+      {text}
+    </a>
+  );
+};
+
+const MobileNavLink = ({ href, text, handleClick }) => {
+  const navigate = useNavigate();
+
+  const handleMobileNavLinkClick = () => {
+    navigate(href);
+    handleClick(); // Close menu
+  };
+
+  return (
+    <span
+      className="block px-4 py-2 text-sm text-white cursor-pointer hover:text-red-900"
+      onClick={handleMobileNavLinkClick}
+    >
+      {text}
+    </span>
+  );
+};
 
 export default Navbar;
