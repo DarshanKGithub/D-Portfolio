@@ -36,15 +36,15 @@ function About() {
             Education
           </h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SSC - Cygnet Public School</li>
-            <li>HSC - Excellence Science Acadmey</li>
+            <li>SSC - Cygnet Public School - 2018</li>
+            <li>HSC - Excellence Science Acadmey - 2020</li>
             <li>
               Bachelor's Degree in Computer Science - Vidya Parithsthan's Arts,
-              Commerce and Science
+              Commerce and Science - 2023
             </li>
             <li>
               Master's Degree in Scientific Computing - Savitribai Phule Pune
-              University
+              University - Pursuing
             </li>
           </ul>
         </section>
@@ -55,13 +55,20 @@ function About() {
           </h2>
           <ul className="grid grid-cols-2 gap-4">
             <li className="hover:text-teal-400 transition-colors">Riding</li>
-            <li className="hover:text-teal-400 transition-colors">Traveling</li>
+            <li className="hover:text-teal-400 transition-colors">Trekking</li>
             <li className="hover:text-teal-400 transition-colors">
               Photography
             </li>
             <li className="hover:text-teal-400 transition-colors">Coding</li>
             <li className="hover:text-teal-400 transition-colors">
-              Playing Guitar
+              <a
+                href="https://www.youtube.com/@darshankshetri1377"
+                className="hover:text-teal-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Playing Guitar
+              </a>
             </li>
           </ul>
         </section>

@@ -34,7 +34,7 @@ function App() {
         />
         <Route path="/projects" element={<Project />} />
         <Route path="/about" element={<About />} />
-        <Route path="/resume" component={<Resume/>} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </div>
   );
