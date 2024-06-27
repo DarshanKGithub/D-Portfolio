@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import image from "../assets/image.png";
+import sticker from "../assets/develop-web.gif";
+import image from "../assets/image.png";
 
 function Heading() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-fixed backdrop-blur-sm">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-fixed">
       <motion.div
         className="absolute top-1/4 left-4 md:left-10 text-white text-center md:text-left"
         initial={{ opacity: 0, y: -50 }}
@@ -36,7 +37,8 @@ function Heading() {
           solutions.
         </p>
       </motion.div>
-      {/* <motion.div
+
+      <motion.div
         className="absolute h-72 bottom-48 md:top-1/2 md:right-10 transform md:-translate-y-1/2 drop-shadow-2xl"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -45,9 +47,9 @@ function Heading() {
         <img
           src={image}
           alt="Darshan Kshetri"
-          className="w-48 h-48 sm:w-56 sm:h-56 md:w-52 md:h-56 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-full"
+          className="w-48 h-48 sm:w-56 sm:h-56 md:w-52 md:h-56 md:-mt-44 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-full"
         />
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 }

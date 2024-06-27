@@ -14,7 +14,7 @@ function Navbar({ scrollToContact }) {
   };
 
   return (
-    <div className="bg-black p-4 flex justify-between lg:justify-center lg:gap-4 items-center text-white">
+    <div className="bg-black p-4 flex justify-between items-center text-white">
       <div className="flex items-center">
         <Link className="text-lg font-bold" to="/">
           DKODER
@@ -51,26 +51,26 @@ function Navbar({ scrollToContact }) {
 
         {/* Dropdown menu for mobile */}
         {isOpen && (
-          <div className="absolute right-0 top-14 w-48 bg-black rounded-lg shadow-lg py-2">
+          <div className="absolute right-0 top-14 w-48 bg-black rounded-lg shadow-lg py-2 z-50">
             <MobileNavLink
               href="/"
               text="Home"
-              handleClick={() => setIsOpen(false)}
+              handleClick={handleNavLinkClick}
             />
             <MobileNavLink
               href="/about"
               text="About"
-              handleClick={() => setIsOpen(false)}
+              handleClick={handleNavLinkClick}
             />
             <MobileNavLink
               href="/projects"
               text="Projects"
-              handleClick={() => setIsOpen(false)}
+              handleClick={handleNavLinkClick}
             />
             <MobileNavLink
               href="/resume"
               text="Resume"
-              handleClick={() => setIsOpen(false)}
+              handleClick={handleNavLinkClick}
             />
             <span
               className="block px-4 py-2 text-sm text-white cursor-pointer hover:text-red-900"
