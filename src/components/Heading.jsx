@@ -25,13 +25,13 @@ function Heading() {
           solutions.
         </p>
       </div>
-      <div className="absolute h-72 bottom-48 md:top-1/2 md:right-10 transform md:-translate-y-1/2 drop-shadow-2xl">
+      {/* <div className="absolute h-72 bottom-48 md:top-1/2 md:right-10 transform md:-translate-y-1/2 drop-shadow-2xl">
         <img
           src={image}
           alt="Darshan Kshetri"
           className="w-48 h-48 sm:w-56 sm:h-56 md:w-52 md:h-56 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-full"
         />
-      </div>
+      </div> */}
     </div>
   );
 }

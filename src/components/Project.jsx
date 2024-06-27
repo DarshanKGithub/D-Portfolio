@@ -28,9 +28,9 @@ const projects = [
 
 function Project() {
   return (
-    <div className="bg-slate-900 min-h-screen p-5">
+    <div className=" min-h-screen p-5">
       <div className=" flex justify-center  h-2 w-full">
-        <h1 className="text-white font-semibold text-3xl mt-2 hover:text-purple-300">
+        <h1 className="font-semibold text-3xl mt-2 hover:text-purple-300  text-red-600  underline underline-offset-5">
           Projects
         </h1>
       </div>
