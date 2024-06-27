@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen bg-[url('./assets/bg1.avif')] bg-cover overflow-auto  bg-fixed  ">
+    <div className="w-full h-screen bg-[url('./assets/unsplach1.jpg')] bg-cover overflow-auto  bg-fixed  ">
       <Navbar scrollToContact={scrollToContact} />
       <Routes>
         <Route

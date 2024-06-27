@@ -20,13 +20,10 @@ function Navbar({ scrollToContact }) {
           DKODER
         </Link>
       </div>
-      
+
       {/* Hamburger menu for mobile */}
       <div className="md:hidden">
-        <button
-          className="text-white"
-          onClick={toggleMenu}
-        >
+        <button className="text-white" onClick={toggleMenu}>
           <svg
             className="w-6 h-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -51,14 +48,30 @@ function Navbar({ scrollToContact }) {
             )}
           </svg>
         </button>
-        
+
         {/* Dropdown menu for mobile */}
         {isOpen && (
           <div className="absolute right-0 top-14 w-48 bg-black rounded-lg shadow-lg py-2">
-            <MobileNavLink href="/" text="Home" handleClick={() => setIsOpen(false)} />
-            <MobileNavLink href="/about" text="About" handleClick={() => setIsOpen(false)} />
-            <MobileNavLink href="/projects" text="Projects" handleClick={() => setIsOpen(false)} />
-            <MobileNavLink href="/resume" text="Resume" handleClick={() => setIsOpen(false)} />
+            <MobileNavLink
+              href="/"
+              text="Home"
+              handleClick={() => setIsOpen(false)}
+            />
+            <MobileNavLink
+              href="/about"
+              text="About"
+              handleClick={() => setIsOpen(false)}
+            />
+            <MobileNavLink
+              href="/projects"
+              text="Projects"
+              handleClick={() => setIsOpen(false)}
+            />
+            <MobileNavLink
+              href="/resume"
+              text="Resume"
+              handleClick={() => setIsOpen(false)}
+            />
             <span
               className="block px-4 py-2 text-sm text-white cursor-pointer hover:text-red-900"
               onClick={() => {
@@ -71,13 +84,21 @@ function Navbar({ scrollToContact }) {
           </div>
         )}
       </div>
-      
+
       {/* Desktop navigation */}
       <div className="hidden md:flex space-x-4">
         <NavLink href="/" text="Home" handleClick={handleNavLinkClick} />
         <NavLink href="/about" text="About" handleClick={handleNavLinkClick} />
-        <NavLink href="/projects" text="Projects" handleClick={handleNavLinkClick} />
-        <NavLink href="/resume" text="Resume" handleClick={handleNavLinkClick} />
+        <NavLink
+          href="/projects"
+          text="Projects"
+          handleClick={handleNavLinkClick}
+        />
+        <NavLink
+          href="/resume"
+          text="Resume"
+          handleClick={handleNavLinkClick}
+        />
         <span
           className="hover:text-red-900 cursor-pointer"
           onClick={scrollToContact}

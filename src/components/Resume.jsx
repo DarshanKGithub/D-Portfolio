@@ -2,7 +2,7 @@ import React from "react";
 
 function Resume() {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen bg-cover bg-center bg-fixed backdrop-blur-sm">
       <a
         href="/Darshan_Kshetri.pdf"
         download
