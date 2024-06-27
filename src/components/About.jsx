@@ -1,6 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const skills = [
+  { name: "JavaScript", level: 50 },
+  { name: "React.js", level: 85 },
+  { name: "C", level: 75 },
+  { name: "HTML & CSS", level: 95 },
+  { name: "C++", level: 50 },
+  { name: "DSA (Data Structure and Algorithm)", level:  30},
+  { name: "Vite.js", level: 60 },
+  { name: "MySQL", level: 65 },
+  { name: "Framer Motion", level: 50 },
+];
+
 function About() {
   return (
     <div className="w-full min-h-screen bg-cover bg-center bg-fixed backdrop-blur-sm p-4 md:p-8 text-white flex flex-col items-center">
@@ -23,24 +35,25 @@ function About() {
           <h2 className="text-2xl md:text-3xl font-bold mb-4 border-b-2 border-teal-400 text-cyan-500 pb-2">
             My Skills
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              "JavaScript",
-              "React.js",
-              "C",
-              "HTML & CSS",
-              "C++",
-              "DSA (Data Structure and Algorithm)",
-              "Vite.js",
-              "MySQL",
-              "Framer Motion",
-            ].map((skill, index) => (
+          <ul className="space-y-4">
+            {skills.map((skill, index) => (
               <motion.li
                 key={index}
                 whileHover={{ scale: 1.1, color: "#2dd4bf" }}
                 className="transition-transform"
               >
-                {skill}
+                <div className="flex justify-between items-center mb-1">
+                  <span>{skill.name}</span>
+                  <span>{skill.level}%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: `${skill.level}%` }}
+                    transition={{ duration: 0.5 }}
+                    className="h-2.5 rounded-full bg-teal-400"
+                  ></motion.div>
+                </div>
               </motion.li>
             ))}
           </ul>

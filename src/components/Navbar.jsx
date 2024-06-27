@@ -86,19 +86,11 @@ function Navbar({ scrollToContact }) {
       </div>
 
       {/* Desktop navigation */}
-      <div className="hidden md:flex space-x-4">
+      <div className="hidden md:flex justify-center flex-grow space-x-4">
         <NavLink href="/" text="Home" handleClick={handleNavLinkClick} />
         <NavLink href="/about" text="About" handleClick={handleNavLinkClick} />
-        <NavLink
-          href="/projects"
-          text="Projects"
-          handleClick={handleNavLinkClick}
-        />
-        <NavLink
-          href="/resume"
-          text="Resume"
-          handleClick={handleNavLinkClick}
-        />
+        <NavLink href="/projects" text="Projects" handleClick={handleNavLinkClick} />
+        <NavLink href="/resume" text="Resume" handleClick={handleNavLinkClick} />
         <span
           className="hover:text-red-900 cursor-pointer"
           onClick={scrollToContact}
